@@ -17,12 +17,13 @@
         <h2>Declaraciones condicionales de PHP</h2>
         <pre>Muy a menudo, cuando escribe código, desea realizar diferentes acciones para diferentes condiciones.
         Puede usar declaraciones condicionales en su código para hacer esto.
-        En PHP tenemos las siguientes declaraciones condicionales:
-        + if declaración: ejecuta algún código si una condición es verdadera
-        + if...else declaración: ejecuta un código si una condición es verdadera y otro código si esa condición es falsa
-        + if...elseif...else declaración: ejecuta códigos diferentes para más de dos condiciones
-        + switch declaración: selecciona uno de los muchos bloques de código que se ejecutarán
-        </pre>
+
+En PHP tenemos las siguientes declaraciones condicionales:
+
++ if declaración: ejecuta algún código si una condición es verdadera
++ if...else declaración: ejecuta un código si una condición es verdadera y otro código si esa condición es falsa
++ if...elseif...else declaración: ejecuta códigos diferentes para más de dos condiciones
++ switch declaración: selecciona uno de los muchos bloques de código que se ejecutarán</pre>
 
         <h3>Ejemplo 1 If Simple</h3>
         <p>El simple cuestiona el valor de una variable para ejecurar un proceso. Nota Solo cuestiona 1 vez y solo realiza 1 proceso.</p>
@@ -116,6 +117,70 @@
             }
         ?>
 
+        <h2>Cilcos en PHP</h2>
+        <pre>A menudo, cuando escribe código, desea que el mismo bloque de código se ejecute una y otra vez un cierto número de veces. Entonces, en lugar de agregar varias líneas de código casi iguales en un script, podemos usar bucles.
+
+Los bucles se utilizan para ejecutar el mismo bloque de código una y otra vez, siempre que se cumpla una determinada condición.
+
+En PHP, tenemos los siguientes tipos de bucles:
+
++ while - recorre un bloque de código siempre que la condición especificada sea verdadera
++ do...while - recorre un bloque de código una vez y luego repite el ciclo siempre que la condición especificada sea verdadera
++ for - recorre un bloque de código un número específico de veces
++ foreach - recorre un bloque de código para cada elemento en una matriz</pre>
+
+<br/>
+        <h3>Ejemplo 1 Ciclo While</h3>
+        <p>El ciclo while es de tipo indefinido esto quiere decir que realizara un numero x de veces un poceso o procesos mientra que una condicion sea verdadera. nota en este tipo de ciclos se debe colocar un proceso de cierre.</p>
+        <p>Vamos a poner como ejemplo una variable x que inicia en 1 y que termina mientras sea menor que 10.</p>
+        <?php
+            $x = 1;
+            while($x < 10){
+                echo 'El valor de la variable x es: '.$x.'<br/>';
+                $x++;
+            }
+        ?>
+        <h3>Ejemplo 2 Ciclo While anidado</h3>
+        <p>Los cliclo tienen la propiedad de contener dentro a otro ciclo y a este tipo de procesos se les denomina anidados.</p>
+        <p>Vamos a poner como ejemplo imprimir las tablas de multiplicar</p>
+        <?php
+            $tabla = 1;
+            $por = 1;
+            while($tabla <= 10){
+                while($por <= 10){
+                    echo $tabla.' * '.$por.' = '.$tabla*$por.'<br/>';
+                    $por++;
+                }
+                $tabla++;
+                $por=1;
+            }
+        ?>
+        <h3>Ejemplo 3 Ciclo do While Simple</h3>
+        <p>El do while tiene como diferencia el ejecutar primero un proceso y despues condicionar el ciclo, en el while simple se condiciona primero y despues se ejecuta el proceso.</p>
+        <p>Vamos a poner como ejemplo un menu de 3 opciones 1. saludo1, 2. saludo2, 3. termina.</p>
+        <?php
+            $opcion = 1;
+            do{
+                echo 'El valor de la variable opcion es: '.$opcion.'<br/>';
+                $opcion++;
+            }while($opcion!=11);
+        ?>
+
+        <h3>Ejemplo 4 Ciclo for Simple</h3>
+        <p>El Clico for es un ciclo definido quiere decir que tiene un inicio, una condicion y un fin. Nota en este tipo de ciclos podemos inicializar una variable cosa que en el while o do while no.</p>
+        <p>Vamos a poner como ejemplo un menu de 3 opciones 1. saludo1, 2. saludo2, 3. termina.</p>
+        <?php
+            for($y=1; $y<11; $y++){
+                echo '-- El valor de la variable Y es: '.$y.'<br/>';
+            }
+
+            echo '<br/>';
+            
+            for($y=0; $y<11; $y+=3){
+                echo '-- El valor de la variable Y es: '.$y.'<br/>';
+            }
+        ?>
+        <p>Hacer el ejemplo 5 las tablas con ciclo for usando la etiqueta table</p>
     </div>
 </body>
 </html>
